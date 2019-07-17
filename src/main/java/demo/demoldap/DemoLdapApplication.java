@@ -26,8 +26,11 @@ public class DemoLdapApplication implements CommandLineRunner {
 		String password = "12341234";
 		String base = "cn=users,dc=localhost";
 		String dn = "uid=" + username + "," + base;
-		String ldapURL = "ldap://192.168.1.188:389";
-
+		
+		//dn = username;
+		//String ldapURL = "ldap://192.168.1.188:389";
+		String ldapURL = "ldaps://192.168.1.188:389";
+		
 		authEnv.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
 		authEnv.put(Context.PROVIDER_URL, ldapURL);
 		authEnv.put(Context.SECURITY_AUTHENTICATION, "simple");
